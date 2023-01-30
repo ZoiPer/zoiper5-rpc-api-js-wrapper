@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Usage of zoiperAPI</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="flex direction-column">
+    <div id="general-actions">
+      <div class="row flex direction-row">
+        <button id="toggle-connection">Connect/Disconnect</button>
+        <div class="flex-grow"></div>
+        <button id="clear-log">Clear log</button>
+      </div>
+    </div>
+    <div id="connected-actions" class="hidden">
+      <div class="row">
+        <label for="phone-number">Phone number:</label>
+        <input id="phone-number" type="text">
+        <button id="dial">Dial</button>
+        <button id="end-active-call">End active call</button>
+        <button id="accept-incoming-call">Accept incoming call</button>
+        <button id="reject-incoming-call">Reject incoming call</button>
+      </div>
+      <div class="row">
+        <label for="contact-filter">Contact filter:</label>
+        <input id="contact-filter" type="text">
+        <button id="filter-contacts">Filter</button>
+        <button id="list-contacts">List contacts (first 10)</button>
+      </div>
+      <div class="row">
+        <button id="list-history-calls">List history entries (first 10)</button>
+      </div>
+      <div class="row">
+        <input id="enable-call-recording" type="checkbox">
+        <label for="enable-call-recording">Enable recording for all calls</label>
+        <button id="save-options">Save options</button>
+      </div>
+    </div>
+    <textarea id="log" class="flex-grow" readonly></textarea>
+    <script src="../../node_modules/simple-jsonrpc-js/dist/simple-jsonrpc-js.min.js"></script>
+    <script src="../../dist/zoiper5-rpc-api-js-wrapper.umd.js"></script>
+    <script src="../token.js"></script>
+    <script src="../token-checker.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

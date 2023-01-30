@@ -1,0 +1,34 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.direction-row {
+  flex-direction: row;
+}
+
+.flex.direction-column {
+  flex-direction: column;
+}
+
+.flex-grow {
+  flex: 1;
+}
+
+.row {
+  margin: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+#log {
+  flex: 1;
+  resize: none;
+}

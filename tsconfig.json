@@ -1,0 +1,17 @@
+{
+  "include": [
+    "src",
+    "types"
+  ],
+  "exclude": [
+    "dist"
+  ],
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
