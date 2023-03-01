@@ -32,7 +32,7 @@ export class ConnectionManager {
         this.onClose?.(event);
       };
       this._socket.onopen = () => resolve();
-      this._socket.onerror = reject;
+      this._socket.onerror = () => reject(new Error('Could not connect to the server'));
     });
   }
 
