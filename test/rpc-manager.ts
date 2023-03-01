@@ -67,7 +67,10 @@ describe('RPCManager', () => {
     const outgoingCounter = setupIdCounter();
     const finishedPromise = setupTest(rpcManager, [
       {type: 'out', payload: {id: outgoingCounter.request(), method: 'authenticate', params: ['invalid token']}},
-      {type: 'in', payload: {id: outgoingCounter.response(), error: 'Access denied.'}},
+      {type: 'in', payload: {id: outgoingCounter.response(), error: {
+        code: 1,
+        message: 'Access denied.',
+      }}},
     ]);
     await expect(rpcManager.initialize('invalid token')).to.eventually.be.rejected;
     await finishedPromise;
