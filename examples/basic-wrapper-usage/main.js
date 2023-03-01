@@ -14,7 +14,7 @@ async function runExample() {
 
     connectionManager.closeConnection();
   } catch (ex) {
-    document.body.textContent = `error: ${ex}`;
+    document.body.textContent = `error: ${ex instanceof Error ? ex.toString() : JSON.stringify(ex)}`;
   }
 }
 

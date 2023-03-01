@@ -97,7 +97,7 @@ class Application {
 
       this.onConnectionOpen();
     } catch (ex) {
-      this.logMessage(`Connection failure: ${ex}`);
+      this.logMessage(`Connection failure: ${ex instanceof Error ? ex.toString() : JSON.stringify(ex)}`);
     }
   }
 
